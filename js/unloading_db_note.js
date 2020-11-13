@@ -42,4 +42,3 @@ window.onload = function () { //Вывод инфы из БД в HTML эллем
         });
 	});
 }
-
