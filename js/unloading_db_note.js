@@ -1,4 +1,8 @@
-function OutRow (title, text, date, time){
+function mainButton (){
+    alert("Работает!");
+}
+
+function OutRow(title, text, date, time) {
 	var div = document.createElement("div");
 	var a = document.createElement("a");
 	var span = document.createElement("span");
@@ -7,7 +11,7 @@ function OutRow (title, text, date, time){
 	var spanTwo = document.createElement("span");
 
 	span.textContent = title;
-	if (title == ""){
+	if (title == "") {
 		span.textContent = text;
 	}
 	spanOne.textContent = date;
@@ -29,16 +33,18 @@ function OutRow (title, text, date, time){
 	divOne.id = "divDataTimeButton";
 	spanOne.id = "dataButton";
 	spanTwo.id = "timeButton";
+
+	document.getElementById("mainButton").addEventListener("click", mainButton);
 }
 
 window.onload = function () { //Вывод инфы из БД в HTML эллемент
 	var DataBaseNote = openDatabase('DataBaseNote', '1.0', 'database note', 4 * 1024 * 1024);
-    DataBaseNote.transaction(function (tx) {
-        tx.executeSql('SELECT * from note', [], function (tx, result) {
-            for (var i = 0; i < result.rows.length; i++) {
-                var item = result.rows.item(i);
-                OutRow(item.title, item.text, item.date, item.time);
-            }
-        });
+	DataBaseNote.transaction(function (tx) {
+		tx.executeSql('SELECT * from note', [], function (tx, result) {
+			for (var i = 0; i < result.rows.length; i++) {
+				var item = result.rows.item(i);
+				OutRow(item.title, item.text, item.date, item.time);
+			}
+		});
 	});
 }
