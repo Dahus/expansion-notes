@@ -26,13 +26,14 @@ function OutRow(title, text, date, time) {
 	divOne.appendChild(spanOne);
 	divOne.appendChild(spanTwo);
 
-	div.id = "buttonPosition";
-	a.id = "mainButton";
+	div.className = "buttonPosition";
+	a.className = "mainButton";
+	a.id = "mainButton"; //Как-то создавать уникальный ID
 	a.href = "#";
-	span.id = "headingButton";
-	divOne.id = "divDataTimeButton";
-	spanOne.id = "dataButton";
-	spanTwo.id = "timeButton";
+	span.className = "headingButton";
+	divOne.className = "divDataTimeButton";
+	spanOne.className = "dataButton";
+	spanTwo.className = "timeButton";
 
 	document.getElementById("mainButton").addEventListener("click", mainButton);
 }

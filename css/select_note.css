@@ -24,11 +24,11 @@ body {
     /* ширина для вертикального скролла */
 }
 
-#buttonPosition {
+.buttonPosition {
     padding: 10px 0px 0px 7px;
 }
 
-#mainButton {
+.mainButton {
     font-family: sans-serif;
     display: block;
     color: #000000;
@@ -42,26 +42,25 @@ body {
     background: linear-gradient(to bottom, #D1D6FF, #D1D6FF);
     border-radius: 5px;
     white-space: nowrap;
-    /* Отменяем перенос текста */
+    /*Отменяем перенос текста*/
     overflow: hidden;
-    /* Обрезаем содержимое */
+    /*Обрезаем содержимое*/
     text-overflow: ellipsis;
-    /* Многоточие */
+} 
+
+.divDataTimeButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#dataButton {
+.dataButton {
     font-size: 10px;
     padding: 4px 0px;
 }
 
-#timeButton {
+.timeButton {
     font-size: 10px;
-}
-
-#divDataTimeButton {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 #button {
