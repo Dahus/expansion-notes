@@ -10,7 +10,7 @@ function OutRow(id, title, text, date, time) {
 	var spanOne = document.createElement("span");
 	var spanTwo = document.createElement("span");
 
-	console.log(id); //Мне нужно эту фигню приписать в id
+	textContent = id; //ID каэдого эллемента
 	span.textContent = title;
 	if (title == "") {
 		span.textContent = text;
@@ -29,7 +29,7 @@ function OutRow(id, title, text, date, time) {
 
 	div.className = "buttonPosition";
 	a.className = "mainButton";
-	a.id = "mainButton"; //Как-то создавать уникальный ID
+	a.id = id; //Как-то создавать уникальный ID
 	a.href = "#";
 	span.className = "headingButton";
 	divOne.className = "divDataTimeButton";
