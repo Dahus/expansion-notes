@@ -1,5 +1,5 @@
-function mainButton (){
-    alert("Работает!");
+function OutIdElement (){
+	alert("Работает!");
 }
 
 function OutRow(title, text, date, time) {
@@ -35,7 +35,7 @@ function OutRow(title, text, date, time) {
 	spanOne.className = "dataButton";
 	spanTwo.className = "timeButton";
 
-	document.getElementById("mainButton").addEventListener("click", mainButton);
+	
 }
 
 window.onload = function () { //Вывод инфы из БД в HTML эллемент
@@ -45,6 +45,7 @@ window.onload = function () { //Вывод инфы из БД в HTML эллем
 			for (var i = 0; i < result.rows.length; i++) {
 				var item = result.rows.item(i);
 				OutRow(item.title, item.text, item.date, item.time);
+				OutIdElement(item.id);
 			}
 		});
 	});
