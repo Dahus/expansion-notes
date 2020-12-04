@@ -2,7 +2,7 @@
 //	alert("Работает!");
 //}
 
-function OutRow(title, text, date, time) {
+function OutRow(id, title, text, date, time) {
 	var div = document.createElement("div");
 	var a = document.createElement("a");
 	var span = document.createElement("span");
@@ -10,6 +10,7 @@ function OutRow(title, text, date, time) {
 	var spanOne = document.createElement("span");
 	var spanTwo = document.createElement("span");
 
+	console.log(id); //Мне нужно эту фигню приписать в id
 	span.textContent = title;
 	if (title == "") {
 		span.textContent = text;
@@ -44,9 +45,7 @@ window.onload = function () { //Вывод инфы из БД в HTML эллем
 		tx.executeSql('SELECT * from note', [], function (tx, result) {
 			for (var i = 0; i < result.rows.length; i++) {
 				var item = result.rows.item(i);
-				OutRow(item.title, item.text, item.date, item.time);
-
-				console.log(item.id); //Мне нужно эту фигню приписать в id
+				OutRow(item.id, item.title, item.text, item.date, item.time);
 			}
 		});
 	});
